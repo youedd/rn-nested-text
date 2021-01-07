@@ -1,0 +1,25 @@
+{
+  "name": "rn-styled-nested-text",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "compile": "npx parcel build index.ts",
+    "start": "npx parcel index.ts",
+    "lint": "xo && tsc",
+    "test": "npm run lint && jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^4.3.7",
+    "jest": "^26.6.3",
+    "jison": "^0.4.18",
+    "parcel-bundler": "^1.12.4",
+    "xo": "^0.37.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  }
+}
