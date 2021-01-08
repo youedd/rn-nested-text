@@ -1,2 +1,5 @@
 node_modules
 .cache
+parser.js
+dist
+.parcel-cache

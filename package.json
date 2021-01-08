@@ -4,17 +4,26 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "compile": "npx parcel build index.ts",
+    "postinstall": "npm run build",
+    "build": "npm run build:clean && npm run build:parser && npm run build:main && npm run build:types",
+    "build:clean": "del dist src/parser.js .parcel-cache",
+    "build:parser": "jison src/parser/parser.jison -o src/parser/parser.js",
+    "build:main": "npx parcel build src/index.ts",
+    "build:types": "npx tsc --declaration",
     "start": "npx parcel index.ts",
-    "lint": "xo && tsc",
+    "lint": "xo ./parser.js && tsc",
+    "lint:fix": "xo --fix --ignore ./parser.js  ",
     "test": "npm run lint && jest"
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "del-cli": "^3.0.1",
     "husky": "^4.3.7",
     "jest": "^26.6.3",
     "jison": "^0.4.18",
-    "parcel-bundler": "^1.12.4",
+    "parcel": "^2.0.0-beta.1",
+    "ts-jest": "^26.4.4",
     "xo": "^0.37.1"
   },
   "husky": {
