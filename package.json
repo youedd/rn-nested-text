@@ -1,34 +1,39 @@
 {
   "name": "rn-styled-nested-text",
   "version": "0.0.1",
-  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
   "license": "MIT",
   "scripts": {
-    "postinstall": "npm run build",
-    "build": "npm run build:clean && npm run build:parser && npm run build:main && npm run build:types",
+    "postinstall": "yarn build",
+    "build": "yarn build:clean && yarn build:parser && yarn build:main",
     "build:clean": "del dist src/parser.js .parcel-cache",
     "build:parser": "jison src/parser/parser.jison -o src/parser/parser.js",
-    "build:main": "npx parcel build src/index.ts",
-    "build:types": "npx tsc --declaration",
-    "start": "npx parcel index.ts",
-    "lint": "xo ./parser.js && tsc",
-    "lint:fix": "xo --fix --ignore ./parser.js  ",
-    "test": "npm run lint && jest"
+    "build:main": "parcel build",
+    "lint": "tsc && ts-standard",
+    "lint:fix": "ts-standard --fix",
+    "test": "yarn lint && yarn jest"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^26.0.20",
-    "del-cli": "^3.0.1",
-    "husky": "^4.3.7",
-    "jest": "^26.6.3",
+    "@parcel/packager-ts": "^2.1.0",
+    "@parcel/transformer-typescript-types": "^2.1.0",
+    "@types/jest": "^27.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "del-cli": "^4.0.1",
+    "husky": "^7.0.4",
+    "jest": "^27.4.7",
     "jison": "^0.4.18",
-    "parcel": "^2.0.0-beta.1",
-    "ts-jest": "^26.4.4",
-    "xo": "^0.37.1"
+    "parcel": "^2.1.0",
+    "ts-jest": "^27.1.2",
+    "typescript": "^4.5.4",
+    "ts-standard": "^11.0.0"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm test"
+      "pre-push": "yarn test"
     }
   }
 }

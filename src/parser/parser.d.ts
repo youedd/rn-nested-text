@@ -1,3 +1,3 @@
-declare const Parser: unknown;
+declare const Parser: unknown
 
-export default Parser;
+export default Parser
