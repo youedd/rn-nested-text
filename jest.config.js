@@ -1,4 +1,4 @@
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node'
+  preset: 'react-native',
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
 }

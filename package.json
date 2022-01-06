@@ -9,31 +9,39 @@
   "scripts": {
     "postinstall": "yarn build",
     "build": "yarn build:clean && yarn build:parser && yarn build:main",
-    "build:clean": "del dist src/parser.js .parcel-cache",
+    "build:clean": "del dist src/parser.js",
     "build:parser": "jison src/parser/parser.jison -o src/parser/parser.js",
-    "build:main": "parcel build",
-    "lint": "tsc && ts-standard",
+    "build:main": "tsc -p tsconfig.build.json",
+    "lint": "tsc  --noEmit && ts-standard",
     "lint:fix": "ts-standard --fix",
-    "test": "yarn lint && yarn jest"
+    "test": "yarn lint && jest"
   },
   "devDependencies": {
-    "@parcel/packager-ts": "^2.1.0",
-    "@parcel/transformer-typescript-types": "^2.1.0",
+    "@testing-library/react-native": "^9.0.0",
     "@types/jest": "^27.4.0",
+    "@types/react": "^17.0.38",
+    "@types/react-native": "^0.66.11",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "del-cli": "^4.0.1",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
     "jison": "^0.4.18",
-    "parcel": "^2.1.0",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "react": "^17.0.2",
+    "react-native": "^0.66.4",
+    "react-test-renderer": "^17.0.2",
     "ts-jest": "^27.1.2",
-    "typescript": "^4.5.4",
-    "ts-standard": "^11.0.0"
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.5.4"
   },
   "husky": {
     "hooks": {
       "pre-push": "yarn test"
     }
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
   }
 }

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render simple text 1`] = `
+<Text>
+  This is a Test
+</Text>
+`;
