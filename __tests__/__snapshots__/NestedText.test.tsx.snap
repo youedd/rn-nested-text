@@ -1,7 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should render nested text  1`] = `
+<Text>
+  This 
+  <Text>
+    is a 
+    <Text>
+      Link
+    </Text>
+  </Text>
+</Text>
+`;
+
+exports[`should render nested text with props 1`] = `
+<Text
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+  testID="text"
+>
+  This 
+  <Text
+    testID="bold"
+  >
+    is a 
+    <Text
+      onPress={[Function]}
+      style={
+        Object {
+          "color": "blue",
+          "textDecorationLine": "underline",
+        }
+      }
+      testID="link"
+    >
+      Link
+    </Text>
+  </Text>
+</Text>
+`;
+
 exports[`should render simple text 1`] = `
 <Text>
+  This is a Test
+</Text>
+`;
+
+exports[`should render simple text with props 1`] = `
+<Text
+  onPress={[Function]}
+  style={
+    Object {
+      "color": "red",
+    }
+  }
+  testID="text"
+>
   This is a Test
 </Text>
 `;
