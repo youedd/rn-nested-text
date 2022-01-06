@@ -1,4 +1,3 @@
-import { Parser, TextGroup } from './parser'
+import NestedText from './NestedText'
 
-export const parse = (input: string): Array<String | TextGroup> =>
-  Parser.parse(input)
+export default NestedText

@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.ts"],"names":["NestedText"],"mappings":"AAAA,OAAOA,UAAP,MAAuB,cAAvB;AAEA,eAAeA,UAAf","sourcesContent":["import NestedText from './NestedText'\n\nexport default NestedText\n"]}

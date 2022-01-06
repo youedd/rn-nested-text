@@ -1,20 +1,46 @@
 {
-  "name": "rn-styled-nested-text",
+  "name": "react-native-nested-text",
   "version": "0.0.1",
   "source": "src/index.ts",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
+  "react-native": "src/index.ts",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/src/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "postinstall": "yarn build",
-    "build": "yarn build:clean && yarn build:parser && yarn build:main",
+    "start": "react-native start",
     "build:clean": "del dist src/parser.js",
-    "build:parser": "jison src/parser/parser.jison -o src/parser/parser.js",
-    "build:main": "tsc -p tsconfig.build.json",
+    "build:parser": "jison src/parser/parser.jison -o src/parser/parser.js -m js && add-line src/parser/parser.js 'export default parser' ",
     "lint": "tsc  --noEmit && ts-standard",
     "lint:fix": "ts-standard --fix",
-    "test": "yarn lint && jest"
+    "test": "yarn lint && jest",
+    "prepare": "yarn build:clean && yarn build:parser && bob build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn test"
+    }
+  },
+  "files": [
+    "src",
+    "lib",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
   },
   "devDependencies": {
     "@testing-library/react-native": "^9.0.0",
@@ -23,6 +49,7 @@
     "@types/react-native": "^0.66.11",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
+    "add-line": "^1.0.1",
     "del-cli": "^4.0.1",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
@@ -30,15 +57,11 @@
     "metro-react-native-babel-preset": "^0.66.2",
     "react": "^17.0.2",
     "react-native": "^0.66.4",
+    "react-native-builder-bob": "^0.18.2",
     "react-test-renderer": "^17.0.2",
     "ts-jest": "^27.1.2",
     "ts-standard": "^11.0.0",
     "typescript": "^4.5.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn test"
-    }
   },
   "peerDependencies": {
     "react": "*",
