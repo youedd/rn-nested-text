@@ -1,1 +1,1 @@
-{"version":3,"sources":["parser.d.ts"],"names":["parser"],"mappings":"AAAA,MAAMA,MAAN;AACA,eAAeA,MAAf","sourcesContent":["const parser: any\nexport default parser\n"]}
+{"version":3,"sources":[],"names":[],"mappings":"","sourcesContent":[]}

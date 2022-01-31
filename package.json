@@ -14,12 +14,7 @@
     "lint": "tsc  --noEmit && ts-standard",
     "lint:fix": "ts-standard --fix",
     "test": "yarn lint && jest",
-    "prepare": "yarn build:clean && yarn build:parser && bob build"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn test"
-    }
+    "prepare": "yarn build:clean && yarn build:parser && bob build && husky install"
   },
   "files": [
     "src",
@@ -47,6 +42,7 @@
     "@types/jest": "^27.4.0",
     "@types/react": "^17.0.38",
     "@types/react-native": "^0.66.11",
+    "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "add-line": "^1.0.1",
@@ -66,5 +62,13 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
+  },
+  "ts-standard": {
+
+    "ignore": [
+      "lib",
+      "src/**/*.js",
+      "App.tsx"
+    ]
   }
 }
