@@ -3,7 +3,6 @@
 [![npm](https://badgen.net/npm/v/rn-nested-text)](https://www.npmjs.com/package/rn-nested-text)
 ![typescript](https://badgen.net/npm/types/tslib)
 [![License](https://badgen.net/github/license/youedd/rn-nested-text)](https://github.com/youedd/rn-nested-text/main/LICENSE)
-<!-- [![npm](https://badgen.net/npm/dw/rn-nested-text)](https://www.npmjs.com/package/rn-nested-text) -->
 [![TS-Standard - Typescript Standard Style Guide](https://badgen.net/badge/code%20style/ts-standard/blue?icon=typescript)](https://github.com/standard/ts-standard)
 
 A library to simplify rendering [nested text](https://reactnative.dev/docs/text#nested-text) for react native and react native web.
