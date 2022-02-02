@@ -17,7 +17,7 @@ const App = () => (
       }}
     >
       {
-        "<nt>Nested Text</nt> can be use to render <link>clickable links</link> and <u><b>mixed</b> <i>styles</i> text</u>"
+        "<nt>Nested Text</nt> can be used to render <link>clickable links</link> and <u><b>mixed</b> <i>styles</i> text</u>"
       }
     </NestedText>
   </SafeAreaView>
