@@ -1,6 +1,6 @@
 {
   "name": "rn-nested-text",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Simplify Nested Text rendering for React Native and React Native Web",
   "author": "Youssef EDDIBILI",
   "repository": "github:youedd/rn-nested-text",
