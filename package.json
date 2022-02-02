@@ -1,5 +1,5 @@
 {
-  "name": "react-native-nested-text",
+  "name": "rn-nested-text",
   "version": "0.0.1",
   "source": "src/index.ts",
   "react-native": "src/index.ts",
