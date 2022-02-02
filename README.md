@@ -1,4 +1,4 @@
-# react-native-nested-text
+# rn-nested-text
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/youedd/rn-nested-text/Test%20CI)
 [![npm](https://badgen.net/npm/v/rn-nested-text)](https://www.npmjs.com/package/rn-nested-text)
 ![typescript](https://badgen.net/npm/types/tslib)
@@ -10,13 +10,13 @@ A library to simplify rendering [nested text](https://reactnative.dev/docs/text#
 ## Install
 
 ```bash
-npm install react-native-nested-text --save
+npm install rn-nested-text --save
 ```
 
 or
 
 ```bash
-yarn add react-native-nested-text
+yarn add rn-nested-text
 ```
 
 ## Demo
