@@ -3,7 +3,13 @@
 exports[`should render nested text  1`] = `
 <Text>
   This 
-  <Text>
+  <Text
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
     is a 
     <Text>
       Link
@@ -23,6 +29,11 @@ exports[`should render nested text with props 1`] = `
 >
   This 
   <Text
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
     testID="bold"
   >
     is a 
