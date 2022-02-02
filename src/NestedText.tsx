@@ -3,12 +3,34 @@ import { Text, TextProps } from 'react-native'
 import { Parser, TextGroup } from './parser'
 
 type TextsProps = Record<string, TextProps> | undefined
-
 export interface NestedTextProps extends TextProps {
   children: string
   textProps?: TextsProps
 }
-const NestedText: React.FC<NestedTextProps> = ({ children, textProps, ...props }) => {
+
+type NestedTextComponent = React.FC<NestedTextProps> & {
+  defaultTextProps: Record<string, TextProps>
+}
+
+const DEFAULT_TEXT_PROPS: Record<string, TextProps> = {
+  i: {
+    style: {
+      fontStyle: 'italic'
+    }
+  },
+  u: {
+    style: {
+      textDecorationLine: 'underline'
+    }
+  },
+  b: {
+    style: {
+      fontWeight: 'bold'
+    }
+  }
+}
+
+const NestedText: NestedTextComponent = ({ children, textProps, ...props }) => {
   const parsed = React.useMemo(() => {
     return Parser.parse(children)
   }, [children])
@@ -25,7 +47,10 @@ const renderNestedText = (
       return text
     }
 
-    const props = textProps[text.tag]
+    const props = {
+      ...NestedText.defaultTextProps[text.tag],
+      ...textProps[text.tag]
+    }
 
     return (
       <Text key={index} {...props}>
@@ -35,4 +60,5 @@ const renderNestedText = (
   })
 }
 
+NestedText.defaultTextProps = DEFAULT_TEXT_PROPS
 export default NestedText

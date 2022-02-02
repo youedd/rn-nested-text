@@ -5,5 +5,8 @@ export interface NestedTextProps extends TextProps {
     children: string;
     textProps?: TextsProps;
 }
-declare const NestedText: React.FC<NestedTextProps>;
+declare type NestedTextComponent = React.FC<NestedTextProps> & {
+    defaultTextProps: Record<string, TextProps>;
+};
+declare const NestedText: NestedTextComponent;
 export default NestedText;
