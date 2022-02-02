@@ -1,11 +1,25 @@
 {
   "name": "rn-nested-text",
-  "version": "0.0.1",
+  "version": "0.0.9",
+  "description": "Simplify Nested Text rendering for React Native and React Native Web",
+  "author": "Youssef EDDIBILI",
+  "repository": "github:youedd/rn-nested-text",
+  "homepage": "https://github.com/youedd/rn-nested-text",
+  "keywords": [
+    "react-native",
+    "text",
+    "style",
+    "props",
+    "nested",
+    "react-native-web",
+    "mixed",
+    "text-props"
+  ],
   "source": "src/index.ts",
   "react-native": "src/index.ts",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
-  "types": "lib/typescript/src/index.d.ts",
+  "types": "lib/typescript/index.d.ts",
   "license": "MIT",
   "scripts": {
     "start": "react-native start",
@@ -64,7 +78,6 @@
     "react-native": "*"
   },
   "ts-standard": {
-
     "ignore": [
       "lib",
       "src/**/*.js",
