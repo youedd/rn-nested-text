@@ -1,65 +1,26 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React from "react";
-import { Linking, SafeAreaView, ScrollView, StyleSheet } from "react-native";
+import { Linking, SafeAreaView } from "react-native";
 import NestedText from "./lib/commonjs";
 
-const App = () => {
-  return (
-    <SafeAreaView>
-      <ScrollView>
-        <NestedText
-          style={styles.text}
-          textProps={{
-            a: {
-              onPress: () =>  console.warn('joo'),
-              style: styles.a,
-            },
-            b: {
-              style: styles.b,
-            },
-            u: {
-              style: styles.u,
-            },
-            i: {
-              style: styles.i,
-            },
-          }}
-        >
-          {
-            "Nested <a>Text can be use to render Links</a> and <u><b>mixed</b> <i>styles</i> text</u>"
-          }
-        </NestedText>
-      </ScrollView>
-    </SafeAreaView>
-  );
+// to add or change text's default props
+NestedText.defaultTextProps.link = {
+  onPress: () => Linking.openURL("https://www.example.com"),
+  style: { color: "blue" },
 };
 
-const styles = StyleSheet.create({
-  text: {
-    color: "grey",
-    fontSize: 20,
-  },
-  a: {
-    color: "blue",
-  },
-  i: {
-    fontStyle: "italic",
-  },
-  u: {
-    textDecorationLine: "underline",
-  },
-  b: {
-    fontWeight: "bold",
-  },
-});
+const App = () => (
+  <SafeAreaView>
+    <NestedText
+      style={{ color: "#2F4F4F", margin: 20 }}
+      textProps={{
+        nt: { style: { color: "black", fontWeight: 'bold' } },
+      }}
+    >
+      {
+        "<nt>Nested Text</nt> can be use to render <link>clickable links</link> and <u><b>mixed</b> <i>styles</i> text</u>"
+      }
+    </NestedText>
+  </SafeAreaView>
+);
 
 export default App;
