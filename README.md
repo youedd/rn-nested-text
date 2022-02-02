@@ -1,4 +1,10 @@
 # react-native-nested-text
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/youedd/rn-nested-text/Test%20CI)
+[![npm](https://badgen.net/npm/v/rn-nested-text)](https://www.npmjs.com/package/rn-nested-text)
+![typescript](https://badgen.net/npm/types/tslib)
+[![License](https://badgen.net/github/license/youedd/rn-nested-text)](https://github.com/youedd/rn-nested-text/main/LICENSE)
+<!-- [![npm](https://badgen.net/npm/dw/rn-nested-text)](https://www.npmjs.com/package/rn-nested-text) -->
+[![TS-Standard - Typescript Standard Style Guide](https://badgen.net/badge/code%20style/ts-standard/blue?icon=typescript)](https://github.com/standard/ts-standard)
 
 A library to simplify rendering [nested text](https://reactnative.dev/docs/text#nested-text) for react native and react native web.
 
@@ -54,7 +60,7 @@ export default App;
 | Prop      |     Default      |            Typ            | Description                               |
 | :-------- | :--------------: | :-----------------------: | :---------------------------------------- |
 | children  |        -         |          string           | A nested text string                      |
-| textProps | DefaultTextProps | Record<string, TextProps> | Object containing nested texts properties (Optionnal) |
+| textProps | DefaultTextProps | Record<string, TextProps> | Object containing nested texts properties (Optional) |
 
 The NestedText component also supports [React Native Text Props](https://reactnative.dev/docs/text#props).
 
@@ -82,7 +88,7 @@ The library provides the default text props below
   }
 }
 ```
-The library exposes the static object NestedText.defaultTextProps, to add or change the default props.
+The static object NestedText.defaultTextProps is exposed to add or change the default props.
 
 ```JSX
 import NestedText from "rn-nested-text";
