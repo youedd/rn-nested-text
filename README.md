@@ -59,7 +59,7 @@ export default App;
 The NestedText component also supports [React Native Text Props](https://reactnative.dev/docs/text#props).
 
 ## Default text props
-The library provides the default text props above 
+The library provides the default text props below 
 
 ```JSX
 {
